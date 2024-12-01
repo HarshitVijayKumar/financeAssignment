@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Forex Data Plot</title>
+</head>
+<body>
+    <h1>Generate Forex Data Plot</h1>
+    
+    <!-- Form to input parameters -->
+    <form method="POST">
+        <label for="from_currency">From Currency:</label>
+        <input type="text" id="from_currency" name="from_currency" placeholder="e.g., EUR" required><br><br>
+
+        <label for="to_currency">To Currency:</label>
+        <input type="text" id="to_currency" name="to_currency" placeholder="e.g., USD" required><br><br>
+
+        <label for="period">Period:</label>
+        <select id="period" name="period" required>
+            <option value="1W">1 Week</option>
+            <option value="1M">1 Month</option>
+            <option value="3M">3 Months</option>
+            <option value="6M">6 Months</option>
+            <option value="1Y">1 Year</option>
+        </select><br><br>
+
+        <button type="submit">Generate Plot</button>
+    </form>
+
+    {% if image_url %}
+        <h2>Generated Plot</h2>
+        <img src="linechart.jpg" alt="Generated Plot" style="max-width: 100%;">
+    {% endif %}
+
+</body>
+</html>
